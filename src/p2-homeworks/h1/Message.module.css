@@ -1,0 +1,55 @@
+.Mes {
+
+background-color: greenyellow;
+}
+.img {
+    position: relative;
+    top: 12px;
+    left: 5px;
+    width: 30px;
+    border-radius: 50px;
+}
+/*.doc {*/
+/*    border: 20px ;*/
+/*    background-color: darkgreen;*/
+/*    width: 210px;*/
+/*    border-radius: 5px;*/
+/*    margin-left: 50px;*/
+/*}*/
+
+
+.doc{
+position:relative;
+display: inline-block;
+width: 300px;
+margin: 10px 0 50px 20px;
+padding: 10px;
+color: #fff;
+/*text-align: center;*/
+background: #55d506;
+background: linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,.4) 0) no-repeat 100% 0 / 30px 30px,
+linear-gradient(-135deg, transparent 20px, #3c9604 0);
+filter: drop-shadow(20px 30px rgba(0,0,0,0.1));
+}
+.doc::before{
+    content: ' ';
+    position:absolute;
+    top: 30px;
+    right: 0;
+    background: linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,0.1) 0) 100% 0 no-repeat;
+    width: 30px;
+    height: 30px;
+    transform: rotate(180deg)
+}
+.name {
+    color: blueviolet;
+}
+.text {
+    color:aliceblue ;
+}
+.time{
+    position: absolute;
+    left: 255px;
+    top: 40px;
+    color: midnightblue;
+}
