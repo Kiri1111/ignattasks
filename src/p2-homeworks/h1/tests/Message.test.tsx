@@ -15,7 +15,11 @@ test('find text "test message name"', () => {
 
         <Message
 
-            messaging={messageData}
+            avatar={messageData.avatar}
+            name={messageData.name}
+            message={messageData.message}
+            time={messageData.time}
+
         />
     ))
     const linkElement = getByText(/test message name/i)
@@ -32,7 +36,12 @@ const messageData1 = {
 test('find text "test message"', () => {
     const {getByText} = render((
         <Message
-            messaging={messageData1}
+
+            avatar={messageData.avatar}
+            name={messageData.name}
+            message={messageData.message}
+            time={messageData.time}
+
         />
     ))
     const linkElement = getByText(/test message/i)
@@ -49,7 +58,12 @@ const messageData2 = {
 test('find text "test message time"', () => {
     const {getByText} = render((
         <Message
-            messaging={messageData2}
+
+            avatar={messageData.avatar}
+            name={messageData.name}
+            message={messageData.message}
+            time={messageData.time}
+
         />
     ))
     const linkElement = getByText(/test message time/i)
