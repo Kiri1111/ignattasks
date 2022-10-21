@@ -1,15 +1,16 @@
-import React from 'react'
+import React, {Dispatch, SetStateAction} from 'react'
 import Affair from './Affair'
-import {AffairType} from './HW2'
+import {AffairType, FilterType} from './HW2'
 
 type AffairsPropsType = { // need to fix any
-    data: any
-    setFilter: any
-    deleteAffairCallback: any
+    data: AffairType
+    setFilter: Dispatch<SetStateAction<FilterType>>
+    deleteAffairCallback: (_id: number) => void
 }
 
 function Affairs(props: AffairsPropsType) {
-    const mappedAffairs = props.data.map((a: AffairType) => (
+    console.log(props)
+    const mappedAffairs = props.data.map((a: any) => (
         <Affair // should work
             key={a._id} // кеи ОБЯЗАТЕЛЬНЫ в 99% - так что лучше их писать всегда при создании компонент в мапе
             affair={a}
@@ -18,12 +19,16 @@ function Affairs(props: AffairsPropsType) {
     ))
 
     const setAll = () => {
+        props.setFilter('all')
     } // need to fix
     const setHigh = () => {
+        props.setFilter('high')
     }
     const setMiddle = () => {
+        props.setFilter('middle')
     }
     const setLow = () => {
+        props.setFilter('low')
     }
 
     return (
