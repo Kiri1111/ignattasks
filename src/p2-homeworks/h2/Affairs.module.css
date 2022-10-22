@@ -1,3 +1,52 @@
 .someClass {
 
 }
+
+.all {
+    margin-left: 15px;
+    font-size: 13px;
+    color: greenyellow;
+    width: 50px;
+    height: 20px;
+    border-width: 1px;
+    background-color: green;
+    border-left-color: greenyellow;
+    border-top-color: greenyellow;
+
+}
+
+.low {
+    margin-left: 15px;
+    font-size: 13px;
+    color: greenyellow;
+    width: 50px;
+    height: 20px;
+    border-width: 1px;
+    background-color: green;
+    border-left-color: greenyellow;
+    border-top-color: greenyellow;
+}
+
+.high {
+    margin-left: 15px;
+    font-size: 13px;
+    color: greenyellow;
+    width: 50px;
+    height: 20px;
+    border-width: 1px;
+    background-color: green;
+    border-left-color: greenyellow;
+    border-top-color: greenyellow;
+}
+
+.middle {
+    margin-left: 15px;
+    font-size: 13px;
+    color: greenyellow;
+    width: 50px;
+    height: 20px;
+    border-width: 1px;
+    background-color: green;
+    border-left-color: greenyellow;
+    border-top-color: greenyellow;
+}

@@ -1,7 +1,19 @@
-.priority {
-    margin: 50px;
+.afairAll {
+    background-color: midnightblue;
 }
 
-.button {
 
+.priority {
+    margin: 40px;
+}
+
+.buttonDel {
+    font-size: 10px;
+    color: greenyellow;
+    width: 60px;
+    height: 15px;
+    border-width: 1px;
+    background-color: green;
+    border-left-color: greenyellow;
+    border-top-color: greenyellow;
 }

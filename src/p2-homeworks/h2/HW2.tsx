@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Affairs from './Affairs'
-
+import m from './HW2.module.css'
 // types
 
 export type AffairPriorityType = 'high' | 'low' | 'middle' // need to fix any
@@ -38,13 +38,11 @@ export const deleteAffair = (affairs: AffairType, _id: number): AffairType => { 
 function HW2() {
     const [affairs, setAffairs] = useState<AffairType>(defaultAffairs) // need to fix any
     const [filter, setFilter] = useState<FilterType>('all')
-    console.log('filter', filter)
     const filteredAffairs = filterAffairs(affairs, filter)
     const deleteAffairCallback = (_id: number) => setAffairs(deleteAffair(affairs, _id)) // need to fix any
 
     return (
-        <div>
-            <hr/>
+        <div className={m.hW2}>
             <hr/>
             homeworks 2
 
@@ -55,7 +53,6 @@ function HW2() {
                 deleteAffairCallback={deleteAffairCallback}
             />
 
-            <hr/>
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativeAffairs/>*/}
             <hr/>
