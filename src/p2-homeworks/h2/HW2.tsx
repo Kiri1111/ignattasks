@@ -4,7 +4,7 @@ import m from './HW2.module.css'
 // types
 
 export type AffairPriorityType = 'high' | 'low' | 'middle' // need to fix any
-export type AffairType = Array<AffairTypeObj> // need to fix any
+export type AffairType = AffairTypeObj[] // need to fix any
 export type FilterType = 'all' | AffairPriorityType
 
 type AffairTypeObj = {

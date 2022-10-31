@@ -19,14 +19,13 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         setName(e.currentTarget.value) // need to fix
     }
     const addUser = () => {
-        // need to fix
+        addUserCallback(name)
         if (name == '') alert('Нет имени')
         else alert(`Hello ` + name + ` !`)
         setName('')
     }
 
-    const totalUsers = 0 // need to fix
-
+    const totalUsers = users.length
     return (
         <Greeting
             name={name}
