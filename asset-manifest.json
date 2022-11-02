@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ignattasks/static/css/main.100ccfa0.css",
-    "main.js": "/ignattasks/static/js/main.999591d8.js",
+    "main.css": "/ignattasks/static/css/main.6ef81417.css",
+    "main.js": "/ignattasks/static/js/main.50fd8a3f.js",
     "index.html": "/ignattasks/index.html",
-    "main.100ccfa0.css.map": "/ignattasks/static/css/main.100ccfa0.css.map",
-    "main.999591d8.js.map": "/ignattasks/static/js/main.999591d8.js.map"
+    "main.6ef81417.css.map": "/ignattasks/static/css/main.6ef81417.css.map",
+    "main.50fd8a3f.js.map": "/ignattasks/static/js/main.50fd8a3f.js.map"
   },
   "entrypoints": [
-    "static/css/main.100ccfa0.css",
-    "static/js/main.999591d8.js"
+    "static/css/main.6ef81417.css",
+    "static/js/main.50fd8a3f.js"
   ]
 }
