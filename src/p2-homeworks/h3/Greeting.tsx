@@ -4,10 +4,10 @@ import SuperInputText from "../h4/common/c1-SuperInputText/SuperInputText";
 import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
 
 type GreetingPropsType = {
-    name: any // need to fix any
+    name: string // need to fix any
     setNameCallback: any // need to fix any
     addUser: () => void // need to fix any
-    error: any // need to fix any
+    error: string // need to fix any
     totalUsers: number // need to fix any
 }
 
