@@ -1,5 +1,4 @@
 import React from 'react'
-//import affairs from "./Affairs";
 import m from './Affair.module.css'
 import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
 
@@ -11,15 +10,15 @@ type AffairPropsType = {
 
 function Affair(props: AffairPropsType) {
 
-    const deleteCallback = (_id: number) => {
-        props.deleteAffairCallback(_id)
-    }// need to fix
+    const deleteCallback = (_id: number) => props.deleteAffairCallback(_id)// need to fix
+
+    const priorityColor = m.item + ' ' + m[props.affair.priority]
 
     return (
-        <div>
-            <span>{props.affair.name}</span>
-            <span className={m.priority}>{props.affair.priority}</span>
-            <SuperButton onClick={() => deleteCallback(props.affair._id)}>x</SuperButton>
+        <div className={m.affairAll}>
+            <span className={m.item}>{props.affair.name}</span>
+            <span className={priorityColor}>{props.affair.priority}</span>
+            <SuperButton className={m.button} onClick={() => deleteCallback(props.affair._id)}>x</SuperButton>
         </div>
     )
 }

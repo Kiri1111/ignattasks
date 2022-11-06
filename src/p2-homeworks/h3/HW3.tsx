@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {v1} from 'uuid'
 import GreetingContainer from './GreetingContainer'
+import s from './Greeting.module.css'
 
 // types
 export type UserType = {

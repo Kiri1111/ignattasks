@@ -1,5 +1,6 @@
 .someClass {
-
+    position: relative;
+    left: 490px;
 }
 
 .error {

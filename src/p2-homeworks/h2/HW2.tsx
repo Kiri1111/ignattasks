@@ -43,7 +43,7 @@ function HW2() {
 
     return (
         <div className={m.hW2}>
-            <hr/>
+            
             homeworks 2
 
             {/*should work (должно работать)*/}

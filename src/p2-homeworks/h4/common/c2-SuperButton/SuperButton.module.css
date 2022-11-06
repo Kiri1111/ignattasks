@@ -1,5 +1,18 @@
 .default {
-    border-radius: 15px;
+    border-radius: 4px;
+    margin-left: 25px;
+    border: none;
+    color: lavenderblush;
+    background-color: royalblue;
+    width: 60px;
+    height: 20px;
+    font-size: 14px;
+
+}
+
+.default:hover {
+    background-color: skyblue;
+    border: 1px solid royalblue;
 }
 
 .red {

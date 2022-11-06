@@ -1,6 +1,7 @@
 import React, {ChangeEvent, useState} from 'react'
 import Greeting from './Greeting'
 import {UserType} from "./HW3";
+import s from "./Greeting.module.css";
 
 type GreetingContainerPropsType = {
     users: UserType[] // need to fix any
@@ -28,13 +29,15 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
 
     const totalUsers = users.length
     return (
-        <Greeting
-            name={name}
-            setNameCallback={setNameCallback}
-            addUser={addUser}
-            error={error}
-            totalUsers={totalUsers}
-        />
+        <div className={s.someClass}>
+            <Greeting
+                name={name}
+                setNameCallback={setNameCallback}
+                addUser={addUser}
+                error={error}
+                totalUsers={totalUsers}
+            />
+        </div>
     )
 }
 

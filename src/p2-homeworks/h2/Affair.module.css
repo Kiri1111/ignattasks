@@ -1,19 +1,29 @@
-.afairAll {
-    background-color: midnightblue;
+.affairAll {
+    background-color: darkblue;
+    width: 380px;
+    height: 30px;
+    display: flex;
 }
 
 
-.priority {
-    margin: 40px;
+.item {
+
+    margin-left: 10px;
+    width: 110px;
 }
 
-.buttonDel {
-    font-size: 10px;
-    color: greenyellow;
-    width: 60px;
-    height: 15px;
-    border-width: 1px;
-    background-color: green;
-    border-left-color: greenyellow;
-    border-top-color: greenyellow;
+.button {
+
+}
+
+.high {
+    color: red;
+}
+
+.middle {
+    color: orange;
+}
+
+.low {
+    color: green;
 }
