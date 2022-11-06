@@ -16,6 +16,7 @@ function Affair(props: AffairPropsType) {
 
     return (
         <div className={m.affairAll}>
+            <span>{props.affair._id}</span>
             <span className={m.item}>{props.affair.name}</span>
             <span className={priorityColor}>{props.affair.priority}</span>
             <SuperButton className={m.button} onClick={() => deleteCallback(props.affair._id)}>x</SuperButton>
