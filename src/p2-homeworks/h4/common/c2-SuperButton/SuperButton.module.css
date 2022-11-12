@@ -1,12 +1,13 @@
 .default {
     border-radius: 4px;
-    margin-left: 25px;
+    /*margin-left: 25px;*/
     border: none;
     color: lavenderblush;
     background-color: royalblue;
-    width: 60px;
+    width: 67px;
     height: 20px;
     font-size: 14px;
+    margin: 10px;
 
 }
 
@@ -15,6 +16,60 @@
     border: 1px solid royalblue;
 }
 
+.default:active {
+    background-color: skyblue;
+    border: 1px solid royalblue;
+    width: 62px;
+    height: 18px;
+}
+
 .red {
     background: red;
+    border: none;
+    border-radius: 3px;
+    margin: 10px;
+    width: 80px;
+    height: 20px;
+}
+
+.red:hover {
+    background: #fd5252;
+    border: none;
+    border-radius: 3px;
+    margin: 10px;
+    width: 80px;
+    height: 20px;
+}
+
+.red:active {
+    background: #8d0000;
+    border: none;
+    border-radius: 3px;
+    margin: 10px;
+    width: 80px;
+    height: 20px;
+}
+
+.disabled {
+    opacity: 50%;
+    background-color: royalblue;
+    width: 67px;
+    height: 20px;
+    font-size: 14px;
+}
+
+.disabled:hover {
+    opacity: 50%;
+    background-color: royalblue;
+    width: 67px;
+    height: 20px;
+    font-size: 14px;
+}
+
+.disabled:active {
+    opacity: 50%;
+    background-color: royalblue;
+    width: 67px;
+    height: 20px;
+    font-size: 14px;
 }

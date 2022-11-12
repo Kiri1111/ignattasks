@@ -1,0 +1,77 @@
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    left: 0;
+    height: 100%;
+    width: 260px;
+    position: fixed;
+    background: #936f6f;
+    transition: 0.5s;
+}
+
+.topBar {
+    padding-left: 30px;
+    height: 35px;
+    background: #9A8B8BFF;
+}
+
+.act {
+    width: 240px;
+    height: 50px;
+    margin: 10px;
+    color: dimgray;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.def {
+    width: 240px;
+    height: 50px;
+    margin: 10px;
+    color: lightgrey;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.act:hover {
+    background-color: silver;
+    width: 240px;
+    height: 50px;
+    margin: 10px;
+    color: dimgray;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.def:hover {
+    background-color: silver;
+    width: 240px;
+    height: 50px;
+    margin: 10px;
+    color: lightgrey;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.span {
+    color: wheat;
+    font-size: 20px;
+    opacity: 80%;
+}
+
+.span:hover {
+    color: wheat;
+    font-size: 20px;
+    opacity: 100%;
+}
+
+.span:active {
+    color: red;
+
+}
+
+.er {
+    width: 100%;
+}

@@ -1,14 +1,17 @@
 .Mes {
-
-background-color: greenyellow;
+    /*position: relative;*/
+    background-color: #9A8B8BFF;
+    padding-left: 20px;
 }
+
 .img {
-    position: relative;
+    /*position: relative;*/
     top: 12px;
     left: 5px;
     width: 30px;
     border-radius: 50px;
 }
+
 /*.doc {*/
 /*    border: 20px ;*/
 /*    background-color: darkgreen;*/
@@ -18,38 +21,40 @@ background-color: greenyellow;
 /*}*/
 
 
-.doc{
-position:relative;
-display: inline-block;
-width: 300px;
-margin: 10px 0 50px 20px;
-padding: 10px;
-color: #fff;
-/*text-align: center;*/
-background: #55d506;
-background: linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,.4) 0) no-repeat 100% 0 / 30px 30px,
-linear-gradient(-135deg, transparent 20px, #3c9604 0);
-filter: drop-shadow(20px 30px rgba(0,0,0,0.1));
+.doc {
+    /*position: relative;*/
+    display: inline-block;
+    width: 300px;
+    margin: 10px 0 50px 20px;
+    padding: 10px;
+    color: #fff;
+    /*text-align: center;*/
+    background: #9A8B8BFF;
+    background: linear-gradient(to left bottom, transparent 50%, rgba(0, 0, 0, .4) 0) no-repeat 100% 0 / 30px 30px,
+    linear-gradient(-135deg, transparent 20px, #3c9604 0);
+    /*filter: drop-shadow(20px 30px rgba(0, 0, 0, 0.1));*/
 }
-.doc::before{
+
+.doc::before {
     content: ' ';
-    position:absolute;
+    /*position: relative;*/
     top: 30px;
     right: 0;
-    background: linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,0.1) 0) 100% 0 no-repeat;
+    background: linear-gradient(to left bottom, transparent 50%, rgba(0, 0, 0, 0.1) 0) 100% 0 no-repeat;
     width: 30px;
     height: 30px;
     transform: rotate(180deg)
 }
+
 .name {
     color: blueviolet;
 }
+
 .text {
-    color:aliceblue ;
+    color: aliceblue;
 }
-.time{
-    position: absolute;
-    left: 255px;
-    top: 40px;
+
+.time {
+
     color: midnightblue;
 }

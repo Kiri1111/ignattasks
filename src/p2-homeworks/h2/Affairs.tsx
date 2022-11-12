@@ -11,7 +11,6 @@ type AffairsPropsType = { // need to fix any
 }
 
 function Affairs(props: AffairsPropsType) {
-    console.log(props)
     const mappedAffairs = props.data.map((a) => (
         <div className={m.someClass}>
             <Affair // should work

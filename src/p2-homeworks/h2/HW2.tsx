@@ -42,21 +42,22 @@ function HW2() {
     const deleteAffairCallback = (_id: number) => setAffairs(deleteAffair(affairs, _id)) // need to fix any
 
     return (
-        <div className={m.hW2}>
-            
+        <>
+
             homeworks 2
+            <div className={m.hW2}>
+                {/*should work (должно работать)*/}
+                <Affairs
+                    data={filteredAffairs}
+                    setFilter={setFilter}
+                    deleteAffairCallback={deleteAffairCallback}
+                />
 
-            {/*should work (должно работать)*/}
-            <Affairs
-                data={filteredAffairs}
-                setFilter={setFilter}
-                deleteAffairCallback={deleteAffairCallback}
-            />
-
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeAffairs/>*/}
-            <hr/>
-        </div>
+                {/*для личного творчества, могу проверить*/}
+                {/*<AlternativeAffairs/>*/}
+                <hr/>
+            </div>
+        </>
     )
 }
 
