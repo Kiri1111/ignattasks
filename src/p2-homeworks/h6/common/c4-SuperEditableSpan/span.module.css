@@ -1,10 +1,14 @@
 .span {
     background-image: url("https://w7.pngwing.com/pngs/149/242/png-transparent-study-skills-learning-pictogram-lesson-teacher-school-library-angle-furniture-text.png");
-    
     border: 1px solid black;
     background-color: lavender;
     margin-left: 30px;
     padding: 2px;
     color: darkslategrey;
     border-radius: 3px;
+    opacity: 50%;
+}
+
+.span:hover {
+    opacity: 100%;
 }
