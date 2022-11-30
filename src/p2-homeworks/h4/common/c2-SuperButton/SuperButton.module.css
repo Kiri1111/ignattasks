@@ -4,11 +4,11 @@
     border: none;
     color: lavenderblush;
     background-color: royalblue;
-    width: 67px;
-    height: 20px;
+    /*width: 67px;*/
+    /*height: 20px;*/
     font-size: 14px;
     margin: 10px;
-
+    border: 1px solid royalblue;
 }
 
 .default:hover {
@@ -19,8 +19,7 @@
 .default:active {
     background-color: skyblue;
     border: 1px solid royalblue;
-    width: 62px;
-    height: 18px;
+    opacity: 80%;
 }
 
 .red {
