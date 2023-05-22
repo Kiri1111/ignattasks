@@ -1,11 +1,10 @@
 import React from 'react';
+import {PostsPage} from "./features/posts/components/postsPage";
 
-const NormalizedApp = () => {
+export const NormalizedApp = () => {
     return (
         <div>
-            aaaaaa
+            <PostsPage/>
         </div>
     );
 };
-
-export default NormalizedApp;
