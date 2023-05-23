@@ -2,16 +2,29 @@ import {postsApi, PostType} from "../../postsApi/api";
 import {Dispatch} from "redux" ;
 import {post} from "jquery";
 
-const initialState = {
-    items: [] as PostType[]
+const mapToLookupTable = (posts: any[]) => {
+    return posts.reduce((acc, item) => {
+        acc[item.id] = item
+    })
 }
 
+const initialState = {
+    items: [] as PostType[],
+    allIds: [] as number[],
+    byID: {} as { [key: string]: PostType }
+}
+type InitialStateType = typeof initialState
 type ActionsType = ReturnType<typeof fetchPostsSuccess> | ReturnType<typeof updatePostsText>
 
-export const postsReducer = (state = initialState, action: ActionsType): { items: PostType[] } => {
+export const postsReducer = (state: InitialStateType = initialState, action: ActionsType) => {
     switch (action.type) {
         case  'POSTS/FETCH-POSTS':
-            return {...state, items: action.payload.posts}
+            return {
+                ...state,
+                items: action.payload.posts,
+                allIds: action.payload.posts.map(el => el.id),
+                byId: mapToLookupTable(action.payload.posts)
+            }
         case  'POSTS/UPDATE-POST':
             return {
                 ...state, items: state.items.map(el => el.id === action.payload.postID ? {
