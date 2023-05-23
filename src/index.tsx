@@ -6,10 +6,8 @@ import * as serviceWorker from './serviceWorker'
 import {NormalizedApp} from "./normalizedDataProject/normalizedApp";
 
 ReactDOM.render(
-    <React.StrictMode>
-        {/*<App/>*/}
-        <NormalizedApp/>
-    </React.StrictMode>,
+    <NormalizedApp/>,
+
     document.getElementById("root")
 )
 

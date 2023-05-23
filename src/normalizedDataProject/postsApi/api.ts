@@ -29,5 +29,8 @@ export const postsApi = {
                     }])
             }, 2000)
         })
+    },
+    updatePost(postId: number, text: string) {
+        return Promise.resolve()
     }
 }
