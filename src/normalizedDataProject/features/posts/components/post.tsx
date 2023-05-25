@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
-import {PostType} from "../../../postsApi/api";
-import {useDispatch} from "react-redux";
-import {updatePost} from "../reducer";
+import {useDispatch, useSelector} from "react-redux";
+import {updatePost} from "../posts-reducer";
+import {AppStateType} from "../../app/store";
 
-export const Post: React.FC<{ post: PostType }> = React.memo(({post}) => {
+export const Post: React.FC<{ postId: number }> = ({postId}) => {
     const dispatch = useDispatch()
+    const post = useSelector((state: AppStateType) => state.posts.byID[postId])
+    console.log(post)
     const [editMode, setEditMode] = useState(false)
     const [newText, setNewText] = useState(post.text)
     return (
@@ -26,5 +28,5 @@ export const Post: React.FC<{ post: PostType }> = React.memo(({post}) => {
             <hr/>
         </div>
     )
-})
+}
 
