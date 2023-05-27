@@ -12,7 +12,7 @@ export const Post: React.FC<{ postId: number }> = ({postId}) => {
     return (
         <div>
             <br/>
-            <b>{post.author.name}</b>
+            <b>{post.authorId}</b>
             {!editMode
                 ? <div onClick={() => {
                     setEditMode(true)

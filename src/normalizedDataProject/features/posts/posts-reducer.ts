@@ -1,24 +1,28 @@
 import {postsApi, PostAPIType} from "../../postsApi/api";
 import {Dispatch} from "redux" ;
 
-export const mapToLookupTable = (posts: any[]) => {
+
+type LookupTableType<T> = { [key: string]: T }
+
+export const mapToLookupTable = <T extends { id: number }>(posts: T[]): LookupTableType<T> => {
+    const acc: LookupTableType<T> = {}
     return posts.reduce((acc, item) => {
         acc[item.id] = item
         return acc
-    }, {})
+    }, acc)
 }
 
 export type PostType = {
     id: number
     text: string
     likes: number
-    authorId: number
+    authorId?: number
 }
 
 const initialState = {
     //items: [] as PostType[],
     allIds: [] as number[],
-    byID: {} as { [key: string]: PostAPIType }
+    byID: {} as { [key: string]: PostType }
 }
 type InitialStateType = typeof initialState
 type ActionsType = ReturnType<typeof fetchPostsSuccess> | ReturnType<typeof updatePostsText>
@@ -30,7 +34,16 @@ export const postsReducer = (state: InitialStateType = initialState, action: Act
                 ...state,
                 // items: action.payload.posts,
                 allIds: action.payload.posts.map(el => el.id),
-                byId: mapToLookupTable(action.payload.posts)
+                byId: mapToLookupTable(action.payload.posts.map(p => {
+                    const copy: PostType = {
+                        id: p.id,
+                        likes: p.likes,
+                        text: p.text,
+                        authorId: p.author?.id
+                    }
+
+                    return copy
+                }))
             }
         case  'POSTS/UPDATE-POST':
             return {
