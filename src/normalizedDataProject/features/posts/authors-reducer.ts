@@ -5,7 +5,7 @@ import {fetchPostsSuccess, mapToLookupTable} from "./posts-reducer";
 
 const initialState = {
     //items: [] as PostType[],
-    allIds: [] as number[],
+    // allIds: [] as number[],
     byId: {} as { [key: string]: AuthorAPIType }
 }
 

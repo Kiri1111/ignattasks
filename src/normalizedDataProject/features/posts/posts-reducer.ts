@@ -21,8 +21,8 @@ export type PostType = {
 
 const initialState = {
     //items: [] as PostType[],
-    allIds: [] as number[],
-    byID: {} as { [key: string]: PostType }
+    // allIds: [] as number[],
+    byId: {} as { [key: string]: PostType }
 }
 type InitialStateType = typeof initialState
 type ActionsType = ReturnType<typeof fetchPostsSuccess> | ReturnType<typeof updatePostsText>
@@ -52,10 +52,10 @@ export const postsReducer = (state: InitialStateType = initialState, action: Act
                 //     ...el,
                 //     text: action.payload.text
                 // } : el)
-                byID: {
-                    ...state.byID,
+                byId: {
+                    ...state.byId,
                     [action.payload.postID]: {
-                        ...state.byID[action.payload.postID],
+                        ...state.byId[action.payload.postID],
                         text: action.payload.text
                     }
                 }

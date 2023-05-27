@@ -5,14 +5,15 @@ import {AppStateType} from "../../app/store";
 
 export const Post: React.FC<{ postId: number }> = ({postId}) => {
     const dispatch = useDispatch()
-    const post = useSelector((state: AppStateType) => state.posts.byID[postId])
+    const post = useSelector((state: AppStateType) => state.posts.byId[postId])
+    const author = useSelector((state: AppStateType) => state.authors.byId[post.authorId])
     console.log(post)
     const [editMode, setEditMode] = useState(false)
     const [newText, setNewText] = useState(post.text)
     return (
         <div>
             <br/>
-            <b>{post.authorId}</b>
+            <b>{author.name}</b>
             {!editMode
                 ? <div onClick={() => {
                     setEditMode(true)
