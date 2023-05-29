@@ -32,7 +32,7 @@ export const commentsReducer = (state = initialState, action: ActionsType): Stat
             }
 
         case  'COMMENTS/FETCH-COMMENTS':
-            const lookupTable = mapToLookupTable(action.payload.comments.map(el => el.lastComment).map(c => {
+            const lookupTable = mapToLookupTable(action.payload.comments.map(c => {
                 const comment: CommentType = {
                     id: c.id,
                     text: c.text,
@@ -44,21 +44,6 @@ export const commentsReducer = (state = initialState, action: ActionsType): Stat
                 ...state,
                 byId: {...state.byId, ...lookupTable}
             }
-        // case  'POSTS/UPDATE-POST':
-        //     return {
-        //         ...state,
-        //         // items: state.items.map(el => el.id === action.payload.postID ? {
-        //         //     ...el,
-        //         //     text: action.payload.text
-        //         // } : el)
-        //         byID: {
-        //             ...state.byID,
-        //             [action.payload.postID]: {
-        //                 ...state.byID[action.payload.postID],
-        //                 text: action.payload.text
-        //             }
-        //         }
-        //     }
     }
     return state
 }
@@ -66,10 +51,10 @@ export const commentsReducer = (state = initialState, action: ActionsType): Stat
 
 export const fetchPostComments = (postId: number) => async (dispatch: Dispatch) => {
     const comments = await postsApi.getComments(postId)
-    dispatch(fetchPostsCommentsSuccess(comments))
+    dispatch(fetchPostsCommentsSuccess(postId, comments))
 }
 
-export const fetchPostsCommentsSuccess = (comments: CommentAPIType[]) => ({
+export const fetchPostsCommentsSuccess = (postId: number, comments: CommentAPIType[]) => ({
     type: 'COMMENTS/FETCH-COMMENTS',
-    payload: {comments}
+    payload: {postId, comments}
 } as const)

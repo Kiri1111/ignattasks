@@ -1,5 +1,6 @@
 import {postsApi, PostAPIType} from "../../postsApi/api";
 import {Dispatch} from "redux" ;
+import {fetchPostsCommentsSuccess} from "./comments-reducer";
 
 
 type LookupTableType<T> = { [key: string]: T }
@@ -16,16 +17,20 @@ export type PostType = {
     id: number
     text: string
     likes: number
-    authorId?: number
+    authorId: number
+    commentsIds: number[]
 }
 
 const initialState = {
     //items: [] as PostType[],
-    // allIds: [] as number[],
+    allIds: [] as number[],
     byId: {} as { [key: string]: PostType }
 }
 type InitialStateType = typeof initialState
-type ActionsType = ReturnType<typeof fetchPostsSuccess> | ReturnType<typeof updatePostsText>
+type ActionsType =
+    ReturnType<typeof fetchPostsSuccess>
+    | ReturnType<typeof updatePostsText>
+    | ReturnType<typeof fetchPostsCommentsSuccess>
 
 export const postsReducer = (state: InitialStateType = initialState, action: ActionsType) => {
     switch (action.type) {
@@ -39,11 +44,23 @@ export const postsReducer = (state: InitialStateType = initialState, action: Act
                         id: p.id,
                         likes: p.likes,
                         text: p.text,
-                        authorId: p.author?.id
+                        authorId: p.author?.id,
+                        commentsIds: p.lastComment.map(c => c.id)
                     }
 
                     return copy
                 }))
+            }
+        case "COMMENTS/FETCH-COMMENTS":
+            return {
+                ...state,
+                byId: {
+                    ...state.byId,
+                    [action.payload.postId]: {
+                        ...state.byId[action.payload.postId],
+                        commentsIds: action.payload.comments.map(c => c.id)
+                    }
+                }
             }
         case  'POSTS/UPDATE-POST':
             return {
