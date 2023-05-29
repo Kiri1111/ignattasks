@@ -15,7 +15,7 @@ export const PostsPage: React.FC = ({}) => {
     }, [])
     return (
         <div>
-            {ids.map((id: any[]) => <Post key={id} postId={id}/>)}
+            {ids.map(id => <Post key={id} postId={id}/>)}
         </div>
     );
 };
