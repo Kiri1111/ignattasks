@@ -19,16 +19,18 @@ export const commentsReducer = (state = initialState, action: ActionsType): Stat
     switch (action.type) {
         case  'POSTS/FETCH-POSTS':
             return {
-                ...state,
-                byId: mapToLookupTable(action.payload.posts.map(el => el.lastComment).flat().map(c => {
-                    const comment: CommentType = {
-                        id: c.id,
-                        text: c.text,
-                        authorId: c.author.id
-                    }
-                    return comment
-                }))
+                ...state, byId: {
+                    ...state.byId, ...mapToLookupTable(action.payload.posts.map(el => el.lastComment).flat().map(c => {
+                        const comment: CommentType = {
+                            id: c.id,
+                            text: c.text,
+                            authorId: c.author.id
+                        }
+                        return comment
+                    }))
+                }
             }
+
         case  'COMMENTS/FETCH-COMMENTS':
             const lookupTable = mapToLookupTable(action.payload.comments.map(el => el.lastComment).map(c => {
                 const comment: CommentType = {

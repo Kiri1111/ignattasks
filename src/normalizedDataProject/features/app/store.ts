@@ -3,10 +3,12 @@ import {postsReducer} from "../posts/posts-reducer";
 import thunkMiddleware from 'redux-thunk'
 import {useDispatch} from "react-redux";
 import {authorsReducer} from "../posts/authors-reducer";
+import {commentsReducer} from "../posts/comments-reducer";
 
 const rootReducer = combineReducers({
     posts: postsReducer,
-    authors: authorsReducer
+    authors: authorsReducer,
+    comments: commentsReducer
 })
 
 export const store = createStore(rootReducer, applyMiddleware(thunkMiddleware))
