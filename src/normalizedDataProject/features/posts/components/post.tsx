@@ -25,9 +25,25 @@ export const Post: React.FC<{ postId: number }> = ({postId}) => {
                 }} value={newText} onChange={(e) => setNewText(e.currentTarget.value)}/></div>}
             <br/>
             <div>Likes: {post.likes}</div>
-
             <hr/>
+            Comments:
+            <ul>
+                {post.commentsIds.map(id => <Comment key={id} id={id}/>)}
+            </ul>
+            <hr/>
+
         </div>
     )
 }
 
+type PropsType = {
+    id: number
+}
+
+const Comment: React.FC<PropsType> = ({id}) => {
+    const comment = useSelector((state: AppStateType) => state.comments.byId[id])
+    const author = useSelector((state: AppStateType) => state.authors.byId[comment.authorId])
+    return (
+        <li><b>{author.name}: </b>{comment.text}</li>
+    )
+}
